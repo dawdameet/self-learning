@@ -1,0 +1,118 @@
+import { Product } from "@/types/store";
+
+export const PRODUCTS_DATABASE: Product[] = [
+  {
+    id: "prod-1",
+    name: "Aether Pro Wireless Noise-Cancelling Headphones",
+    description: "Spatial audio acoustic chamber with adaptive 48dB active noise cancellation and 40-hour ultra battery life.",
+    price: 349,
+    category: "Audio",
+    rating: 4.9,
+    reviewsCount: 128,
+    inStock: true,
+    stockCount: 14,
+    imageUrl: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80",
+    tags: ["Audiophile", "Wireless", "ANC"],
+  },
+  {
+    id: "prod-2",
+    name: "CyberDeck 75% Custom Mechanical Keyboard",
+    description: "Gasket-mounted hot-swappable keyboard with CNC aluminum chassis, pre-lubed linear switches, and south-facing RGB.",
+    price: 189,
+    category: "Peripherals",
+    rating: 4.8,
+    reviewsCount: 94,
+    inStock: true,
+    stockCount: 22,
+    imageUrl: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&q=80",
+    tags: ["Custom", "Hot-Swap", "Aluminum"],
+  },
+  {
+    id: "prod-3",
+    name: "Quantum Ultra Retina OLED Monitor 34\"",
+    description: "34-inch curved QD-OLED display, 240Hz refresh rate, 0.03ms response time, 99.3% DCI-P3 color gamut with USB-C 90W PD.",
+    price: 999,
+    category: "Electronics",
+    rating: 4.95,
+    reviewsCount: 62,
+    inStock: true,
+    stockCount: 8,
+    imageUrl: "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&q=80",
+    tags: ["QD-OLED", "240Hz", "Curved"],
+  },
+  {
+    id: "prod-4",
+    name: "Vortex Ergonomic Ultralight Gaming Mouse",
+    description: "49g magnesium alloy honeycomb shell with 30,000 DPI optical sensor and 4000Hz polling rate hyper-polling wireless dongle.",
+    price: 129,
+    category: "Peripherals",
+    rating: 4.7,
+    reviewsCount: 210,
+    inStock: true,
+    stockCount: 35,
+    imageUrl: "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&q=80",
+    tags: ["Ultralight", "Magnesium", "Wireless"],
+  },
+  {
+    id: "prod-5",
+    name: "Titan Chrono Smartwatch Ultra",
+    description: "Aerospace-grade titanium chassis, dual-frequency GPS, biometric sensor array, sapphire crystal, and 100m water resistance.",
+    price: 499,
+    category: "Wearables",
+    rating: 4.85,
+    reviewsCount: 77,
+    inStock: true,
+    stockCount: 19,
+    imageUrl: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
+    tags: ["Titanium", "Biometrics", "GPS"],
+  },
+  {
+    id: "prod-6",
+    name: "Nexus Thunderbolt 5 GaN Docking Station 14-in-1",
+    description: "Single-cable workstation connectivity powering dual 8K displays, 140W power delivery, 2.5GbE LAN, and 80Gbps transfer speed.",
+    price: 249,
+    category: "Accessories",
+    rating: 4.6,
+    reviewsCount: 45,
+    inStock: false,
+    stockCount: 0,
+    imageUrl: "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=800&q=80",
+    tags: ["Thunderbolt", "GaN", "Workstation"],
+  },
+  {
+    id: "prod-7",
+    name: "Aura Hi-Res Desktop Studio DAC & Amp",
+    description: "Dual ESS SABRE ES9038PRO reference DAC chips delivering pristine 32-bit/768kHz PCM and native DSD512 decoding.",
+    price: 429,
+    category: "Audio",
+    rating: 4.9,
+    reviewsCount: 38,
+    inStock: true,
+    stockCount: 11,
+    imageUrl: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80",
+    tags: ["Audiophile", "DAC", "Studio"],
+  },
+  {
+    id: "prod-8",
+    name: "AeroForm Top-Grain Leather Desk Mat",
+    description: "Vegetable-tanned full-grain artisan leather with non-slip cork base, integrated magnetic cable management groove.",
+    price: 79,
+    category: "Accessories",
+    rating: 4.75,
+    reviewsCount: 115,
+    inStock: true,
+    stockCount: 50,
+    imageUrl: "https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=800&q=80",
+    tags: ["Leather", "DeskSetup", "Minimalist"],
+  },
+];
+
+export async function getProducts(): Promise<Product[]> {
+  // Simulate minimal server-side retrieval latency
+  await new Promise((resolve) => setTimeout(resolve, 80));
+  return PRODUCTS_DATABASE;
+}
+
+export async function getProductById(id: string): Promise<Product | undefined> {
+  return PRODUCTS_DATABASE.find((p) => p.id === id);
+}
